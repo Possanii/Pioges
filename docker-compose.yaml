@@ -8,3 +8,14 @@ services:
       POSTGRES_DB: pioges_db
     ports:
       - "5432:5432"
+  pioges-core-api:
+    build:
+      context: apps/core-api
+      dockerfile: Dockerfile
+    container_name: core-api
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres-db
