@@ -1,0 +1,10 @@
+services:
+  postgres-db:
+    image: postgres:15.15-alpine3.22
+    container_name: postgres-db
+    environment:
+      POSTGRES_USER: pioges
+      POSTGRES_PASSWORD: pioges123
+      POSTGRES_DB: pioges_db
+    ports:
+      - "5432:5432"
